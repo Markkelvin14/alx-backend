@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <p>
+        {% if g.user %}
+            {% set welcome_message = _('logged_in_as', username=g.user.get('name')) %}
+        {% else %}
+            {% set welcome_message = _('not_logged_in') %}
+        {% endif %}
+        {{ welcome_message }}
+    </p>
+</body>
+</html>
